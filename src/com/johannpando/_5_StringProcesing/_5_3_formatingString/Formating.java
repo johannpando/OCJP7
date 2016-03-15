@@ -1,4 +1,4 @@
-package com.johannpando._5_StringProcesing.formatingString;
+package com.johannpando._5_StringProcesing._5_3_formatingString;
 
 /**
  * <table>
@@ -53,9 +53,88 @@ package com.johannpando._5_StringProcesing.formatingString;
 public class Formating {
 
 	public static void main(String[] args) {
-		formatinParamater_b();
-		formatinParameter_c();
-		formatingParameter_f_d();
+		understinding();
+		// formatinParamater_b();
+		// formatinParameter_c();
+		// formatingParameter_f_d();
+
+	}
+
+	private static void understinding() {
+		// %[argument_index$][flags][width][.precision]conversion_char
+
+		// d
+		// d
+		// Format the argument in locale-specific decimal integer.
+		// The '#' flag cannot be used with this conversion.
+
+		// %<argument_index$><flags><width><conversion>
+
+		// Flags:
+		// - Left-justify this argument; must specify width as well.
+
+		// + Include a sign (+ or -) with this argument. Applicable only if
+		// conversion character is d or f (for numbers).
+
+		// 0 Pad this argument with zeros. Applicable only if conversion
+		// character is d or f (for numbers). Must specify width as well.
+
+		// , Use locale-specific grouping separators (for example, the comma in
+		// 123,456). Applicable only if conversion character is d or f (for
+		// numbers).
+
+		// ( Enclose negative numbers in parentheses. Applicable only if
+		// conversion character is d or f (for numbers).
+
+		// conversion.
+		System.out.printf("'%d' %n", 1234);
+		// width, conversion
+		System.out.printf("'%6d' %n", 1234);
+		// flag, width, conversion
+		System.out.printf("'%-6d' %n", 1234);
+		// flag, width, conversion
+		System.out.printf("'%06d' %n", 1234);
+		// flag, conversion
+		System.out.printf("'%(d' %n", 1234);
+		// flag, conversion: Enclose negative numbers in parentheses.
+		System.out.printf("'%(d' %n", -1234);
+		// conversion
+		System.out.printf("'% d'  %n", 1234);
+		// conversion
+		System.out.printf("'% d'  %n", -1234);
+		// flag, conversion: Include a sign
+		System.out.printf("'%+d' %n", 1234);
+		// flag, conversion: Include a sign
+		System.out.printf("'%+d' %n", -1234);
+
+		System.out.println("\n%f\n");
+
+		// f
+		// Format the argument in a locale-specific decimal format.
+		// Precision is the number of digits after the decimal separator.
+		// The value is rounded according to the precision.
+
+		// %<argument_index$><flags><width><.precision><conversion>
+
+		// By default, the value of precision is 6.
+		// For 'e' and 'f' conversions, the precision is the number of digits
+		// after the decimal separator.
+
+		// The following snippet of code shows how to format floating-point
+		// numbers with the default precision, which is 6:
+		System.out.printf("%f %n", 10.2);
+		System.out.printf("%f %n", 0.000001234);
+
+		// precision, conversion
+		System.out.printf("%.2f %n", 123456.789);
+		// width, precision, conversion
+		System.out.printf("'%8.2f' %n", 123456.789);
+		// width, precision, conversion
+		System.out.printf("'%10.2f' %n", 123456.789);
+		// flag, width, precision, conversion
+		System.out.printf("'%-10.2f' %n", 123456.789);
+		// flag, width, precision, conversion
+		System.out.printf("'%010.2f' %n", 123456.789);
 
 	}
 
@@ -120,10 +199,10 @@ public class Formating {
 		System.out.format("\n%(,d", -12345);
 		// Exception java.util.IllegalFormatPreciosionException at runtime;
 		// can't specify precision with integers
-		//System.out.format("\n[%-10.2d]", 12345);
+		// System.out.format("\n[%-10.2d]", 12345);
 	}
-	
-	private static void formatingParameter_s(){
-		
+
+	private static void formatingParameter_s() {
+
 	}
 }
