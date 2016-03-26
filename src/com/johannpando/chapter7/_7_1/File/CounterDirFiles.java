@@ -5,9 +5,26 @@ import java.io.File;
 public class CounterDirFiles {
 
 	public static void main(String[] args) {
-		File file = new File("C:\\OCP");
-		if (file.isDirectory()) {
-			System.out.println(file.list());
+		File dir = new File("C:\\temp");
+		if (dir.isDirectory()) {
+			int fileCount = 0;
+			int dirCount = 0;
+			// Retrieves files and sub directories
+			String[] list = dir.list();
+			File item = null;
+			for (String listItem : list) {
+				// Creates File object
+				item = new File(dir, listItem);
+				if(item.isDirectory()){
+					++dirCount;
+				} else if(item.isFile()){
+					++fileCount;
+				}
+			}
+			System.out.println("Dir(s): " + dirCount);
+			System.out.println("File(s): " + fileCount);
+		} else {
+			throw new IllegalArgumentException("Not a directory");
 		}
 	}
 
