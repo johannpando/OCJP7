@@ -1,4 +1,4 @@
-package com.johannpando.chapter10._10_1;
+package com.johannpando.chapter10._10_1.createAndUseThreads;
 
 import java.util.Set;
 
