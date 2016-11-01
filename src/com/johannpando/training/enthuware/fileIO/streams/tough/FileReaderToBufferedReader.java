@@ -12,7 +12,7 @@ public class FileReaderToBufferedReader {
 		String fileName1 = "/Users/Johann/git/OCJP7/source/myCsv.csv";
 		charReader(fileName1);
 		// En vez de imprimir los char, se imprime en String
-		// Por alguna razón no imprime el primer caracter.
+		// Por alguna razón no imprime el primer caracter. SOLUCIONADO.
 		stringReader(fileName1);
 
 	}
@@ -30,8 +30,12 @@ public class FileReaderToBufferedReader {
 		try (FileReader fr = new FileReader(fileName1); BufferedReader br = new BufferedReader(fr);) {
 			// int charRead = 0;
 			// while ((charRead = fr.read()) != -1) {
-			while (fr.read() != -1) {
-				System.out.println("Read string: " + br.readLine());
+
+			// Por esto no pintaba el primer caracter
+			// while (fr.read() != -1) {
+			String str = null;
+			while ((str = br.readLine()) != null) {
+				System.out.println("Read string: " + str);
 			}
 		}
 	}
